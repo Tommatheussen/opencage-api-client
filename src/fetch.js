@@ -11,6 +11,10 @@ const checkStatus = (response) => {
     code: response.status,
     message: response.statusText,
   };
+  
+  if(response.rate) {
+    error.rate = response.rate;
+  }
   // error.response = response;
   throw error;
 };
